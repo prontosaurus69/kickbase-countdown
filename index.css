@@ -59,22 +59,39 @@ h1 {
   line-height: 1;
 }
 
-/* Mobile Optimierung */
 @media (max-width: 480px) {
-  h1 {
-    font-size: 1.4em;
-  }
-
-  .digit {
-    font-size: 2em;
-  }
-
-  .colon {
-    font-size: 2em;
+  .countdown-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
   }
 
   .time-box {
-    padding: 10px;
-    min-width: 60px;
+    width: 70%;
+    padding: 15px;
+  }
+
+  .digit {
+    font-size: 2.5em;
+  }
+
+  .label {
+    font-size: 0.9em;
+  }
+
+  .colon {
+    display: none; /* Kein ":" zwischen den Boxen */
+  }
+
+  h1 {
+    font-size: 1.4em;
+    padding: 0 10px;
+  }
+
+  #spruch {
+    padding: 0 15px;
+    font-size: 1em;
   }
 }
+
+
