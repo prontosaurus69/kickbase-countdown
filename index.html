@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <h1>NO KANE, NO GAIN 3.0</h1>
+
+  <div class="countdown-container">
+    <div class="time-box">
+      <span id="days" class="digit">00</span>
+      <span class="label">DAYS</span>
+    </div>
+    <div class="colon">:</div>
+    <div class="time-box">
+      <span id="hours" class="digit">00</span>
+      <span class="label">HRS</span>
+    </div>
+    <div class="colon">:</div>
+    <div class="time-box">
+      <span id="minutes" class="digit">00</span>
+      <span class="label">MINS</span>
+    </div>
+    <div class="colon">:</div>
+    <div class="time-box">
+      <span id="seconds" class="digit">00</span>
+      <span class="label">SECS</span>
+    </div>
+  </div>
+
+  <script>
+    const endDate = new Date("2025-08-06T18:00:00+02:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = endDate - now;
+
+      if (distance <= 0) {
+        document.querySelector(".countdown-container").innerHTML = "Let's fetz";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = String(days).padStart(2, "0");
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
