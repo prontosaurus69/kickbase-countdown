@@ -67,7 +67,7 @@ h1 {
   }
 
   .time-box {
-    width: 70%;
+    width: 80%;
     padding: 15px;
   }
 
@@ -80,17 +80,18 @@ h1 {
   }
 
   .colon {
-    display: none; /* Kein ":" zwischen den Boxen */
+    display: none; /* Doppelpunkte ausblenden */
   }
 
   h1 {
     font-size: 1.4em;
     padding: 0 10px;
+    text-align: center;
   }
 
   #spruch {
+    font-size: 0.9em;
     padding: 0 15px;
-    font-size: 1em;
   }
 }
 
@@ -107,5 +108,6 @@ h1 {
   z-index: 1000;
   background: transparent;
 }
+
 
 
